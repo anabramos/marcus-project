@@ -10,6 +10,13 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+/*--------------------------------------------Map*/
+div#map {
+  min-height: 500px;
+  width: 100%;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
@@ -7959,7 +7966,7 @@ textarea.form-control-lg {
 
 .text-white-50 {
   --bs-text-opacity: 1;
-  color: rgba(255, 255, 255, 0.5) !important;
+  color: rgba(255, 255, 255) !important;
 }
 
 .text-reset {
@@ -11522,9 +11529,7 @@ body {
   #mainNav .nav-link:active {
     color: #fff;
   }
-  #mainNav.navbar-shrink {
-    background-color: #fff;
-  }
+
   #mainNav.navbar-shrink .navbar-brand {
     color: #000;
   }
@@ -11573,7 +11578,7 @@ body {
   font-size: 2.5rem;
   line-height: 2.5rem;
   letter-spacing: 0.8rem;
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+  background: linear-gradient(rgb(255 101 0 / 90%), rgb(255 255 255));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
           background-clip: text;
@@ -11584,7 +11589,7 @@ body {
 }
 @media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
-    font-size: 4rem;
+    font-size: 3.0rem;
     line-height: 4rem;
   }
 }
@@ -11594,7 +11599,7 @@ body {
     padding: 0;
   }
   .masthead h1, .masthead .h1 {
-    font-size: 6.5rem;
+    font-size: 4.0rem;
     line-height: 6.5rem;
     letter-spacing: 0.8rem;
   }
@@ -11605,8 +11610,8 @@ body {
 }
 
 .about-section {
-  padding-top: 10rem;
-  background: linear-gradient(to bottom, #000 0%, rgba(0, 0, 0, 0.9) 75%, rgba(0, 0, 0, 0.8) 100%);
+  padding-block: 7rem;
+  background: linear-gradient(to bottom, #f47e34 0%, rgb(244 125 49) 75%, rgb(0 0 0 / 0%) 100%);
 }
 .about-section p {
   margin-bottom: 5rem;
