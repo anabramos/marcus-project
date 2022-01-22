@@ -1,42 +1,98 @@
-/*var maps;
+var map;
 var service;
 var infowindow;
 
-function initMap() {
-  var sydney = new google.maps.LatLng(-33.867, 151.195);
-
-  infowindow = new google.maps.InfoWindow();
-
-  map = new google.maps.Map(
-      document.getElementById('map'), {center: sydney, zoom: 15});
-
-  var request = {
-    query: 'Museum of Contemporary Art Australia',
-    fields: ['name', 'geometry'],
-  };
-
-  var service = new google.maps.places.PlacesService(map);
-
-  service.findPlaceFromQuery(request, function(results, status) {
-    if (status === google.maps.places.PlacesServiceStatus.OK) {
-      for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-      }
-      map.setCenter(results[0].geometry.location);
+function initMap() { 
+  map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 8,
+    center: {
+        lat: 52.160216,
+        lng: 5.195168
     }
+  });  
+  service = new google.maps.places.PlacesService(map);
+  infowindow = new google.maps.InfoWindow();
+  
+  var queries = [
+    {
+      label: 'De Pont Museum of Contemporary Art',
+      fields: ['name', 'formatted_address', 'geometry'],
+      contributors: 'piet en henk'
+    },
+    {
+      label: 'Starbucks',
+      fields: ['name', 'formatted_address', 'geometry'],
+      contributors: 'foo bar baz'
+    }
+  ];
+
+  for (var i = 0; i < queries.length; i++) {
+
+    var request = {
+      query: queries[i].label,
+      fields: ['name', 'formatted_address', 'geometry'],
+    };
+
+    service.findPlaceFromQuery(request, function(results, status) {
+      if (status === google.maps.places.PlacesServiceStatus.OK) {
+       
+        for (var j = 0; j < results.length; j++) {
+          createMarker(results[j], queries[i]);
+        }
+        
+        // TODO: Check last iteration and only do this for the last request
+        map.setCenter(results[0].geometry.location);  
+      }
+    });  
+  }
+};
+
+function createMarker(place, queryValues) {
+  if (!place.geometry || !place.geometry.location) return;
+    
+  const marker = new google.maps.Marker({
+    map,
+    position: place.geometry.location,
+  });
+    
+  google.maps.event.addListener(marker, "click", () => {
+
+    var content = document.createElement("div");
+    
+    var nameElement = document.createElement("h6");
+    nameElement.textContent = queryValues.label;
+    content.appendChild(nameElement);
+
+    var placeAddressElement = document.createElement("p");
+    placeAddressElement.textContent = place.formatted_address;
+    content.appendChild(placeAddressElement);
+
+    var contributorsElement = document.createElement("p");
+    contributorsElement.textContent = queryValues.contributors;
+    content.appendChild(contributorsElement);
+
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
+
   });
 }
-*/
 
-function initMap() {
-    var map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 8,
-        center: {
-            lat: 52.160216,
-            lng: 5.195168
-        }
+/*    
+    service.getDetails(request, (place, status) => {
+      if (
+        status === google.maps.places.PlacesServiceStatus.OK &&
+        place &&
+        place.geometry &&
+        place.geometry.location
+      ) {
+        const marker = new google.maps.Marker({
+          map,
+          position: place.geometry.location,
+        });
+  
+
+      }
     });
-
 
 /*
     var locations = [
@@ -82,4 +138,3 @@ function initMap() {
 
     var markerCluster = new MarkerClusterer(map, markers, { imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m' });
 */
-}
