@@ -17,19 +17,19 @@ function initMap() {
     {
       label: 'De Pont Museum of Contemporary Art',
       fields: ['name', 'formatted_address', 'geometry'],
-      contributors: 'piet en henk'
+      contributors: 'Sanne'
     },
     {
-      label: 'Starbucks',
+      label: 'Einkhuizen',
       fields: ['name', 'formatted_address', 'geometry'],
-      contributors: 'foo bar baz'
+      contributors: 'Tessa'
     }
   ];
 
-  for (var i = 0; i < queries.length; i++) {
+  queries.forEach(function(item, i){
 
     var request = {
-      query: queries[i].label,
+      query: item.label,
       fields: ['name', 'formatted_address', 'geometry'],
     };
 
@@ -44,7 +44,7 @@ function initMap() {
         map.setCenter(results[0].geometry.location);  
       }
     });  
-  }
+  });
 };
 
 function createMarker(place, queryValues) {
