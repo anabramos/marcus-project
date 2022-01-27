@@ -78,6 +78,5 @@ function createMarker(place, queryValues) {
 
     infowindow.setContent(content);
     infowindow.open(map, marker);
-
   });
 }
