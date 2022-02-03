@@ -4,7 +4,7 @@ var infowindow;
 
 function initMap(queries) { 
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 8,
+    zoom: 7,
     center: {
         lat: 52.160216,
         lng: 5.195168
@@ -57,13 +57,13 @@ function createMarker(place, queryValues) {
     placeAddressElement.textContent = place.formatted_address;
     content.appendChild(placeAddressElement);
 
-    var contributorsElement = document.createElement("p");
-    contributorsElement.textContent = queryValues.contributors;
-    content.appendChild(contributorsElement);
-
     var descriptionElement = document.createElement("p");
     descriptionElement.textContent = queryValues.description;
     content.appendChild(descriptionElement);
+
+    var contributorsElement = document.createElement("p");
+    contributorsElement.textContent = queryValues.contributors;
+    content.appendChild(contributorsElement);
 
     infowindow.setContent(content);
     infowindow.open(map, marker);
