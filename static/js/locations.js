@@ -29,13 +29,13 @@ const natureQueries = [
         label: 'Castricum Beach',
         fields: ['name', 'formatted_address', 'geometry'],
         contributors: 'Heleen & Dilara',
-        description: "A short train ride from Amsterdam, you exit at train station Castricum. From here it is a lovely (1 hour) walk through the forest and dunes to the beach. It is much quieter than some other beaches near Amsterdam, and during your walk you will encounter lovely highland cows.(Heleen) I like Castricum aan Zee, because it has a beautiful beach and it’s a place where I can clear my head while listening to the waves.(Dilara)"
+        description: "A short train ride from Amsterdam, you exit at train station Castricum. From here it is a lovely (1 hour) walk through the forest and dunes to the beach. It is much quieter than some other beaches near Amsterdam, and during your walk you will encounter lovely highland cows.(Heleen) My favorite spot for winter beach walks is Castricum aan Zee. I like Castricum aan Zee, because it has a beautiful beach and it’s a place where I can clear my head while listening to the waves.(Dilara)"
     },
     {
         label: 'Club Zand',
         fields: ['name', 'formatted_address', 'geometry'],
         contributors: 'Dilara',
-        description: "My favorite spot for winter beach walks is Castricum aan Zee. During the lockdown they had a very nice bar at the beach with take away food and drinks."
+        description: "During the lockdown they had a very nice bar at the beach with take away food and drinks."
     },
     {
         label: 'De Alde Feanen National Park',
@@ -140,7 +140,7 @@ const hiddenGemsQueries = [
         description: "This is a great place to go swimming in the summer. A great way to start off the day before going to the office in the summer. This is a very gay friendly beach in the middle of the city. Its like a catwalk for guys in speedos."
     },
     {
-        label: 'Standhotel Terschelling',
+        label: 'Strandhotel Terschelling',
         fields: ['name', 'formatted_address', 'geometry'],
         contributors: 'Mechtild',
         description: "It is really a secret. But you have to accept shared bathrooms but only per 2 rooms. It is such a lovely hotel and such a nice atmosphere. But it is not posh. And is very close to the beach and has a lovely restaurant. Go there!"
