@@ -66,6 +66,12 @@ const natureQueries = [
         fields: ['name', 'formatted_address', 'geometry'],
         contributors: 'Tessa',
         description: "You can do a station to station walk here that shows some of the more beautiful apsects of north holland, it takes you through woods, dunes, the beach and back round again, ending at a very cute little station with a traditional station cafe where you can take a load off and have a - after 16km very well deserved - beer and snack."
+    },
+    {
+        label: 'The Kralingse Bos',
+        fields: ['name', 'formatted_address', 'geometry'],
+        contributors: 'Fernando',
+        description: "Main park in Rotterdam. A true imponent landscape, the Park is the biggest one in the city and is built around the Kralingse Pas, an enormous lake which provides a really nice view, including two Windmills on one of the sides. It's a beautiful place to spend the day, go for a walk and get a bit of the feeling of what it is to be in nature (although we're still speaking of an urban park). Oh, and some people even swim in the lake, but if you want to do that, it's at your own risk"
     }
 ];
 
@@ -243,6 +249,12 @@ const lekkersQueries = [
         fields: ['name', 'formatted_address', 'geometry'],
         contributors: 'Nimalka',
         description: "This place is a vegetarian indian restaurant that even though overpriced is exactly like the kind of food I will find in india. You will also see a lot of the indian diaspora in here and will here a lot of indian language background noise! South africa has a big indian-origin population and so maybe this is something that would like as well. Their south indian coffee is yummy as is their chai (chai tea.  is NOT a thing….pass it on). The atmosphere inside is also completely indian and can work as an escape from the Dutch as well."
+    },
+    {
+        label: "BRAAI Westerpark",
+        fields: ['name', 'formatted_address', 'geometry'],
+        contributors: 'Emma',
+        description: "To comfort your boerewors cravings!"
     },
 
 ];
